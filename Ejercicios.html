@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src=/media/lucas/LUCAS/Lucas/BootCamp/Bootcamp/Frameworks/angular.min.js></script>
+	<title>Ejercicios Web</title>
+	
+</head>
+<body ng-app="myApp">
+
+	<h1>Ejercicios Web</h1>
+
+	<div>
+		<h3>Ejercicio 1</h3>
+		<div>
+			<label>Nombre</label>
+			<input type="text" ng-model=nombre>
+		</div>
+		<div>
+			<label>Apellido</label>
+			<input type="text" ng-model=apellido>
+		</div>
+		<div>
+			<p>Hola {{nombre + " " + apellido | uppercase}}</p>
+		</div>
+	</div>
+
+	<div>
+		<h3>Ejercicio 2</h3>
+		<div>
+			<label>Operando 1</label>
+			<input type="number" name="one" ng-model=one>
+		</div>
+		<div>
+			<label>Operando 2</label>
+			<input type="number" name="two" ng-model=two>
+		</div>
+		<div id="bot" class="btn-group" role="group" aria-label="First group" align="center"> 
+			<button type="button" class="btn btn-default" ng-click="res = one + two">+</button> 
+			<button type="button" class="btn btn-default" ng-click="res = one - two">-</button> 
+			<button type="button" class="btn btn-default" ng-click="res = one * two">x</button> 
+			<button type="button" class="btn btn-default" ng-click="res = one / two">/</button>
+		</div>
+		<div>
+			<p>El resultado de su operacion es: {{res}}</p>
+		</div>
+	</div>
+
+	<div>
+		<h3>Ejercicio 3</h3>
+		<div>
+			<input type="text" ng-model="text" placeholder="Enter you input here...">
+			<p>Input value: {{ text }}</p>
+			<p>Filtered Value: {{ text | reverse }}</p>
+		</div>
+		<script>
+			var myApp = angular.module("myApp",[]);
+			myApp.filter("reverse", function() {
+				return function(input) {
+					return input.split("").reverse().join("");
+				};
+			});
+		</script>
+	</div>
+
+</body>
+</html>

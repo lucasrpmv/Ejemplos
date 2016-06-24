@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src=/media/lucas/LUCAS/Lucas/BootCamp/Bootcamp/Frameworks/angular.min.js></script>
+	<title>Ejemplos</title>
+</head>
+<body>
+
+	<div ng-app ng-init=firstName="John";lastName="Doe">
+		<p>The full name is: {{firstName + " " + lastName}}</p>
+		<button ng-click="count = count + 1">Click Me!</button>
+		<p>{{count}}</p>
+	</div>
+
+	<script>
+		function myController($scope){
+			$scope.count = 0
+		}
+	</script>
+
+
+</body>
+</html>
